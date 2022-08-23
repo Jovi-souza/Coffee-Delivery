@@ -66,6 +66,7 @@ export const About = styled('div', {
 export const SectionItems = styled('section', {
   mt: '10rem',
   display: 'flex',
+  flexWrap: 'wrap',
+  justifyContent: 'center',
   gap: '3rem',
-  flexWrap: 'wrap'
 })

@@ -2,7 +2,9 @@ import { styled } from "../../styles/stitches.config";
 
 export const Container = styled('div', {
   display: 'flex',
-  flexDirection: 'column',
+  flexWrap: 'wrap',
+  alignItems: 'center',
+  justifyContent: 'center',
   backgroundColor: '$baseCard',
   width: '28rem',
   padding: '0 2rem 2rem 2rem',
@@ -12,17 +14,16 @@ export const Container = styled('div', {
 
   '& img': {
     width: '16rem',
-    m: 'auto',
-    mt: '-3rem'
+    margin: '-3rem 0 0 0'
   }
 })
 
 export const SubTitle = styled('span', {
   color: '$yellowDark',
   backgroundColor: '$yellowLight',
-  padding: '.1rem .5rem',
+  padding: '.1rem 1rem',
+  margin: '1.5rem 0',
   width: 'max-content',
-  margin: '1.5rem auto',
   borderRadius: '50px',
   textTransform: 'uppercase'
 })
@@ -37,7 +38,7 @@ export const Paragraph = styled('p', {
   fontSize: '1.25rem',
   color: '$baseLabel',
   width: '20rem',
-  margin: '1rem auto'
+  margin: '1rem auto 2rem'
 })
 
 export const Purchase = styled('div', {

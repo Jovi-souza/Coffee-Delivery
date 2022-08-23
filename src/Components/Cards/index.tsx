@@ -7,16 +7,17 @@ export function Card() {
     <Container>
       <img src={ teste } />
       <SubTitle>Tradicional</SubTitle>
+      <SubTitle>Tradicional</SubTitle>
       <CoffeeName>Expresso Tradicional</CoffeeName>
       <Paragraph>O tradicional café feito com água quente e grãos moídos</Paragraph>
       <Purchase>
         <Price>R$ <span>9,90</span></Price>
         <HowManyItems>
-          <Plus cursor='pointer' size={14}/>
+          <Minus cursor='pointer' size={14}/>
           <div>
             1
           </div>
-          <Minus cursor='pointer' size={14}/>
+          <Plus cursor='pointer' size={14}/>
         </HowManyItems>
         <AddItems> <ShoppingCart weight="fill" size={18} color='white' /></AddItems>
       </Purchase>

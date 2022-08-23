@@ -79,6 +79,13 @@ export const {
       4: '4rem',
       5: '5rem',
     },
+    width: {
+      1: '1rem',
+      2: '2rem',
+      3: '3rem',
+      4: '4rem',
+      5: '5rem',
+    },
     fontSizes: {
       1: '1.6rem',
       2: '2rem',
