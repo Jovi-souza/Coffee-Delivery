@@ -46,6 +46,7 @@ export function Home() {
         </div>
         <img src={CoffeIntro} />
       </IntroContainer>
+      <Title style={'cardTitle'}>Nossos Cafés</Title>
       <SectionItems>
         <Card />
         <Card />

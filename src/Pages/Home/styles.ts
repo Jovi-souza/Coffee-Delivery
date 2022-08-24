@@ -9,9 +9,18 @@ export const IntroContainer = styled('section', {
 export const Title = styled('h1', {
   color: '$basetitle',
   fontSize: '4rem',
-  fontWeight: '800',
+  fontWeight: '700',
   width: '60rem',
-  mb: '1rem'
+  mb: '1rem',
+  
+  variants: {
+    style: {
+      cardTitle: {
+        fontSize: '3rem',
+        m: '12rem 0 8rem'
+      }
+    }
+  }
 })
 
 export const Paragraph = styled('p', {
@@ -48,7 +57,6 @@ export const About = styled('div', {
 })
 
 export const SectionItems = styled('section', {
-  mt: '10rem',
   display: 'flex',
   flexWrap: 'wrap',
   justifyContent: 'center',

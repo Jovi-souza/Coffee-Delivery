@@ -13,13 +13,13 @@ export const GlobalCss = globalCss({
   },
 
   h1:{
-    fontFamily: 'Baloo 2, sans-serif'
+    fontFamily: 'Baloo2, cursive'
   },
 
   html: {
     fontSize: '62.5%',
     scrollBehavior: 'smooth',
-    fontFamily: 'Roboto, sans-serif',
+    fontFamily: 'Roboto, sans-serif'
   },
 
   button: {

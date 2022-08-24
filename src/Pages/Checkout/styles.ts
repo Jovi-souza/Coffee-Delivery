@@ -116,6 +116,7 @@ export const CartContainer = styled('div', {
   backgroundColor: '$baseCard',
   width: '35vw',
   padding: '3rem',
+  borderRadius: '5px 50px 5px 50px'
 })
 
 export const Orders = styled('div', {
