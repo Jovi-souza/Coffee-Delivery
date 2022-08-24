@@ -30,12 +30,10 @@ export const LocaleAndCart = styled('div', {
     backgroundColor: '$purpleLight',
     color: '$purpleDark',
   }
- 
 })
 
 export const ShoppingCartContainer = styled('div', {
   backgroundColor: '$yellowLight',
-  color: '$yellow',
   padding: '.65rem 1rem',
   borderRadius: '5px',
   position: 'relative',

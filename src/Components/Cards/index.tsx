@@ -13,11 +13,11 @@ export function Card() {
       <Purchase>
         <Price>R$ <span>9,90</span></Price>
         <HowManyItems>
-          <Minus cursor='pointer' size={14}/>
+          <Minus cursor='pointer' size={14} color='purple'/>
           <div>
             1
           </div>
-          <Plus cursor='pointer' size={14}/>
+          <Plus cursor='pointer' size={14} color='purple'/>
         </HowManyItems>
         <AddItems>
           <ShoppingCart weight="fill" size={18} color='white' />

@@ -5,6 +5,7 @@ import {
   MapPinLine, 
   Money 
 } from "phosphor-react";
+import { CoffeeCard } from "../../Components/CoffeeCard";
 
 import { 
   CartContainer, 
@@ -16,6 +17,7 @@ import {
   Button,
   ContainerWrap,
   TotalPrice,
+  Orders,
 } from "./styles";
 
 export function Checkout() {
@@ -50,6 +52,12 @@ export function Checkout() {
       <ContainerWrap>
         <h1>Cafés selecionados</h1>
         <CartContainer>
+          <Orders>
+            <CoffeeCard />
+            <CoffeeCard />
+            <CoffeeCard />
+            <CoffeeCard />
+          </Orders>
           <TotalPrice>
             <p>Total de itens <span>R$ 25</span></p>
             <p>Entrega <span>R$ 25</span></p>

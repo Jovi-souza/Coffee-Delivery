@@ -2,6 +2,7 @@ import { styled } from "../../styles/stitches.config";
 
 export const Container = styled('div', {
   display: 'flex',
+  flexWrap: 'wrap',
   gap: '5rem'
 })
 
@@ -50,7 +51,13 @@ export const Inputs = styled('input', {
   borderRadius: '5px',
 
   '&:focus': {
-    outlineColor: '$yellowDark',
+    outline: '1px solid $yellowDark',
+  },
+
+  '&::placeholder': {
+    display: 'flex',
+    alignContent: 'flex-end',
+    gap: '10rem'
   },
 
   variants: {
@@ -109,6 +116,29 @@ export const CartContainer = styled('div', {
   backgroundColor: '$baseCard',
   width: '35vw',
   padding: '3rem',
+})
+
+export const Orders = styled('div', {
+  overflowY: 'auto',
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '2rem 0',
+  mb: '1rem',
+  height: '22rem',
+
+  '&::-webkit-scrollbar': {
+    width: '12px',
+  },
+  
+  '&::-webkit-scrollbar-track': {
+    background: '$baseHover'    
+  },
+  
+  '&::-webkit-scrollbar-thumb': {
+    backgroundColor: '$yellow',    
+    borderRadius: '20px',     
+    border: '1px solid #000'  
+  }
 })
 
 export const TotalPrice = styled('div', {

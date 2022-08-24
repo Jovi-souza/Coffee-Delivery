@@ -64,6 +64,7 @@ export const HowManyItems = styled('div', {
   display: 'flex',
   gap: '1.5rem',
   padding: '1rem 1rem',
+  width: 'max-content',
   borderRadius: '5px',
 
   backgroundColor: '$baseButton',
@@ -71,10 +72,6 @@ export const HowManyItems = styled('div', {
   '& div': {
     fontSize: '1.25rem'  
   },
-
-  '& svg': {
-    color: 'Purple',
-  }
 })
 
 export const AddItems = styled('button', {
