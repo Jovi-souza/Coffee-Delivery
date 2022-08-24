@@ -6,7 +6,8 @@ import {
   About, 
   Paragraph, 
   Title, 
-  SectionItems 
+  SectionItems, 
+  IconsContainer
 } from './styles'
 
 export function Home() {
@@ -18,27 +19,27 @@ export function Home() {
           <Paragraph style='subTitle'>Com o Coffee Delivery você recebe seu café onde estiver, a qualquer hora</Paragraph>
           <About>
             <div>
-              <div className='icons' >
-                <ShoppingCart className='icons' weight='fill' color='white' size={16} />
-              </div>
+              <IconsContainer style={'yellowDark'}>
+                <ShoppingCart weight='fill' color='white' size={16} />
+              </IconsContainer>
               <Paragraph>Compra simples e segura</Paragraph>
             </div>
             <div>
-              <div className='icons' >
-                <Package className='icons' weight='fill' color='white' size={16} />
-              </div>
+              <IconsContainer style={'gray'}>
+                <Package weight='fill' color='white' size={16} />
+              </IconsContainer>
               <Paragraph>Embalagem mantém o café intacto</Paragraph>
             </div>
               <div>
-              <div className='icons' >
-                <Timer className='icons' weight='fill' color='white' size={16} />
-              </div>
+              <IconsContainer style={'yellow'}>
+                <Timer weight='fill' color='white' size={16} />
+              </IconsContainer>
               <Paragraph >Entrega rápida e rastreada</Paragraph>
             </div>
             <div>
-              <div className='icons' >
-                <Coffee className='icons' weight='fill' color='white' size={16} />
-              </div>
+              <IconsContainer style={'purple'}>
+                <Coffee weight='fill' color='white' size={16} />
+              </IconsContainer>
               <Paragraph>O café chega fresquinho até você</Paragraph>
             </div>
           </About>

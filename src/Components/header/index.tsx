@@ -1,5 +1,5 @@
 import Logo from '../../images/Logo.svg'
-import { Container, LocaleAndCart } from "./styles";
+import { Container, LocaleAndCart, ShoppingCartContainer } from "./styles";
 import { MapPin, ShoppingCart } from "phosphor-react";
 
 export function Header() {
@@ -11,9 +11,10 @@ export function Header() {
           <MapPin weight='fill' color='purple' size={16}/> 
           Esperança, PB
         </p>
-        <div className='ShoppingCart'>
+        <ShoppingCartContainer >
           <ShoppingCart weight='fill' size={16}/>
-        </div>
+          <p>20</p>
+        </ShoppingCartContainer>
       </LocaleAndCart >
     </Container>
   )

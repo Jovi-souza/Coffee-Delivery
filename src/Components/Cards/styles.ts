@@ -81,5 +81,10 @@ export const AddItems = styled('button', {
   border: 'none',
   backgroundColor: '$purpleDark',
   padding: '.5rem .75rem',
-  borderRadius: '5px'
+  borderRadius: '5px',
+  transition: '.2s',
+  
+  '&:hover': {
+    backgroundColor: '$purple',
+  }
 })

@@ -19,7 +19,9 @@ export function Card() {
           </div>
           <Plus cursor='pointer' size={14}/>
         </HowManyItems>
-        <AddItems> <ShoppingCart weight="fill" size={18} color='white' /></AddItems>
+        <AddItems>
+          <ShoppingCart weight="fill" size={18} color='white' />
+        </AddItems>
       </Purchase>
     </Container>
   )

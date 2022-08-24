@@ -1,6 +1,6 @@
 import { Container } from "./styles";
 import { HowManyItems } from "../Cards/styles";
-import { Minus, Plus } from "phosphor-react";
+import { Minus, Plus, Trash } from "phosphor-react";
 
 import image from '../../images/CaféComLeite.svg'
 
@@ -8,8 +8,10 @@ export function CoffeeCard() {
   return(
     <Container>
       <img src={image} />
-      <h1>Expresso Tradicional</h1>
-      <p>R$ 9,90</p>
+      <div>
+        <h1>Expresso Tradicional</h1>
+        <p>R$ 9,90</p>
+      </div>
       <HowManyItems >
         <Minus cursor='pointer' size={14}/>
         <div>
@@ -17,6 +19,7 @@ export function CoffeeCard() {
         </div>
         <Plus cursor='pointer' size={14}/>
       </HowManyItems>
+      <p><Trash /> Remover</p>
     </Container>
   )
 }

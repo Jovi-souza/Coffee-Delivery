@@ -2,7 +2,7 @@ import { styled } from "../../styles/stitches.config";
 
 export const Container = styled('div', {
   display: 'flex',
-  gap: '2rem'
+  gap: '5rem'
 })
 
 export const ContainerWrap = styled('div', {
@@ -92,9 +92,61 @@ export const Button = styled('button', {
   backgroundColor: '$baseButton',
   padding: '1.5rem 3rem',
   color: '$baseText',
-  textTransform: 'uppercase'
+  textTransform: 'uppercase',
+  transition: '.2s',
+
+  '&:hover': {
+    backgroundColor: '$baseHover'
+  },
+
+  '&:focus': {
+    backgroundColor: '$purpleLight',
+    outlineColor: '$purple',
+  }
 })
 
 export const CartContainer = styled('div', {
+  backgroundColor: '$baseCard',
+  width: '35vw',
+  padding: '3rem',
+})
 
+export const TotalPrice = styled('div', {
+  display: 'flex',
+  justifyContent: 'flex-end',
+  flexDirection: 'column',
+  borderTop: '1px solid $baseButton',
+  paddingTop: '2rem',
+  width: '100%',
+  gap: '1.5rem 0',
+
+  '& p': {
+    display: 'flex',
+    justifyContent: 'space-between',
+    fontSize: '1.5rem',
+    color: '$baseText'
+  },
+
+  '& h2': {
+    display: 'flex',
+    justifyContent: 'space-between',
+    fontSize: '2rem',
+    color: '$basetitle'
+  },
+
+  '& button': {
+    border: 'none',
+    borderRadius: '5px',
+    color: '$white',
+    backgroundColor: '$yellow',
+    padding: '1rem',
+    fontSize: '1.5rem',
+    fontWeight: 'bold',
+    textTransform: 'uppercase',
+    transition: '.2s',
+    
+    '&:hover': {
+      backgroundColor: '$yellowDark',
+    }
+  }
 })

@@ -36,31 +36,15 @@ export const Paragraph = styled('p', {
 export const About = styled('div', {
   display: 'flex',
   flexWrap: 'wrap',
-  width: '60rem',
+  width: '55rem',
   mt: '8rem',
   gap: '2.5rem',
 
   '& div': {
     display: 'flex',
-    width: '28rem',
+    alignItems: 'center',
+    justifyContent: 'center'
   },
-
-  '& .icons': {
-    backgroundColor: '$yellow',
-    width: 'max-content',
-    height: 'max-content',
-    padding: '.3rem',
-    borderRadius: '50px',
-
-    '& svg': {
-      variants: {
-        back: {
-          yellow: '$yellow',
-          gray: '$baseText',
-        },
-      },
-    }
-  }
 })
 
 export const SectionItems = styled('section', {
@@ -69,4 +53,30 @@ export const SectionItems = styled('section', {
   flexWrap: 'wrap',
   justifyContent: 'center',
   gap: '3rem',
+})
+
+export const IconsContainer = styled('p', {
+  backgroundColor: '$yellow',
+  padding: '.5rem',
+  width: '2.6rem',
+  height: '2.6rem',
+  borderRadius: '50px',
+
+  variants: {
+    style: {
+      yellow: {
+        backgroundColor: '$yellow'
+      },
+      yellowDark: {
+        backgroundColor: '$yellowDark'
+      },
+      purple: {
+        backgroundColor: '$purple'
+      },
+      gray: {
+        backgroundColor: '$baseText'
+        
+      },
+    },
+  },
 })
