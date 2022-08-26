@@ -33,11 +33,16 @@ export const LocaleAndCart = styled('div', {
 })
 
 export const ShoppingCartContainer = styled('div', {
-  backgroundColor: '$yellowLight',
-  padding: '.65rem 1rem',
-  borderRadius: '5px',
+  display: 'flex',
+  gap: '1rem',
   position: 'relative',
-  cursor: 'pointer',
+  
+  '& .NavLink': {
+    padding: '.65rem 1rem',
+    borderRadius: '5px',
+    cursor: 'pointer',
+    backgroundColor: '$yellowLight',
+  },
 
   '& p': {
     position: 'absolute',

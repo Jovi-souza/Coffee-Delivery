@@ -1,15 +1,29 @@
 import { Minus, Plus, ShoppingCart } from "phosphor-react";
 import { CoffeeName, Container, Paragraph, Price, Purchase, SubTitle, AddItems, HowManyItems } from "./styles";
 
-import teste from '../../images/ExpressoCremoso.svg'
-export function Card() {
+interface CardProps {
+  CoffeeSrc: string
+  Types: Array<string>
+  Title: string
+  Description: string
+}
+
+export function Card({ CoffeeSrc, Description, Title, Types }:CardProps) {
+
+  const category = Types.map( e => {
+    return e
+  })
+
   return(
     <Container>
-      <img src={ teste } />
-      <SubTitle>Tradicional</SubTitle>
-      <SubTitle>Tradicional</SubTitle>
-      <CoffeeName>Expresso Tradicional</CoffeeName>
-      <Paragraph>O tradicional café feito com água quente e grãos moídos</Paragraph>
+      <img src={ CoffeeSrc } />
+      <div>
+        <SubTitle hasContent={ category[0] ? 'flex' : 'none'} >{category[0]}</SubTitle>
+        <SubTitle hasContent={ category[1] ? 'flex' : 'none'} >{category[1]}</SubTitle>
+        <SubTitle hasContent={ category[2] ? 'flex' : 'none'} >{category[2]}</SubTitle>
+      </div>
+      <CoffeeName>{Title}</CoffeeName>
+      <Paragraph>{Description}</Paragraph>
       <Purchase>
         <Price>R$ <span>9,90</span></Price>
         <HowManyItems>

@@ -5,6 +5,7 @@ import {
   MapPinLine, 
   Money 
 } from "phosphor-react";
+import { NavLink } from "react-router-dom";
 import { CoffeeCard } from "../../Components/CoffeeCard";
 
 import { 
@@ -62,7 +63,9 @@ export function Checkout() {
             <p>Total de itens <span>R$ 25</span></p>
             <p>Entrega <span>R$ 25</span></p>
             <h2>Total <span>R$ 25</span></h2>
-            <button >Confirmar pedido</button>
+            <NavLink to="/Success" title="Success">
+              <button >Confirmar pedido</button>
+            </NavLink>
           </TotalPrice>
         </CartContainer>
       </ContainerWrap>

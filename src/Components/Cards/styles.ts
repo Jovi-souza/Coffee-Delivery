@@ -2,20 +2,25 @@ import { styled } from "../../styles/stitches.config";
 
 export const Container = styled('div', {
   display: 'flex',
-  flexWrap: 'wrap',
+  flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'center',
   backgroundColor: '$baseCard',
   width: '28rem',
   padding: '0 2rem 2rem 2rem',
   textAlign: 'center',
-  mb: '3rem',
+  m: '0 auto 3rem auto',
   borderRadius: '5px 50px 5px 50px',
 
   '& img': {
     width: '16rem',
     margin: '-3rem 0 0 0'
-  }
+  },
+
+  '& div': {
+    display: 'flex',
+    gap: '1rem'
+  },
 })
 
 export const SubTitle = styled('span', {
@@ -25,7 +30,18 @@ export const SubTitle = styled('span', {
   margin: '1.5rem 0',
   width: 'max-content',
   borderRadius: '50px',
-  textTransform: 'uppercase'
+  textTransform: 'uppercase',
+
+  variants: {
+    hasContent: {
+      flex: { 
+        display: 'flex'
+      },
+      none: { 
+        display: 'none' 
+      },
+    },
+  },
 })
 
 export const CoffeeName = styled('h1', {

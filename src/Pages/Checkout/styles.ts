@@ -128,7 +128,7 @@ export const Orders = styled('div', {
   height: '22rem',
 
   '&::-webkit-scrollbar': {
-    width: '12px',
+    width: '6px',
   },
   
   '&::-webkit-scrollbar-track': {
@@ -171,6 +171,7 @@ export const TotalPrice = styled('div', {
     color: '$white',
     backgroundColor: '$yellow',
     padding: '1rem',
+    width: '100%',
     fontSize: '1.5rem',
     fontWeight: 'bold',
     textTransform: 'uppercase',
