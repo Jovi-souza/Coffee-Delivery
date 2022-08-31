@@ -125,7 +125,7 @@ export const Orders = styled('div', {
   flexDirection: 'column',
   gap: '2rem 0',
   mb: '1rem',
-  height: '22rem',
+  maxHeight: '22rem',
 
   '&::-webkit-scrollbar': {
     width: '6px',

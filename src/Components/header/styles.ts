@@ -58,6 +58,17 @@ export const ShoppingCartContainer = styled('div', {
     fontSize: '.75rem',
     color: '$white',
     backgroundColor: '$yellowDark',
-    borderRadius: '50px'
+    borderRadius: '50px',
+
+    variants: {
+      hasItems: {
+        flex: { 
+          display: 'flex'
+        },
+        none: { 
+          display: 'none' 
+        },
+      },
+    },
   }
 })

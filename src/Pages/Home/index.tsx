@@ -29,6 +29,7 @@ import Irlandês from '../../images/Irlandês.svg'
 import Árabe from '../../images/Árabe.svg'
 
 export function Home() {
+
   return(
     <div>
       <IntroContainer>

@@ -1,4 +1,6 @@
 import { Minus, Plus, ShoppingCart } from "phosphor-react";
+import { useContext} from "react";
+import { CardContext } from "../../Contexts/CardsContext";
 import { CoffeeName, Container, Paragraph, Price, Purchase, SubTitle, AddItems, HowManyItems } from "./styles";
 
 interface CardProps {
@@ -8,11 +10,16 @@ interface CardProps {
   Description: string
 }
 
+
 export function Card({ CoffeeSrc, Description, Title, Types }:CardProps) {
 
-  const category = Types.map( e => {
-    return e
+  const {createNewRequest, MoreItems, LessItems, items} = useContext(CardContext)
+
+  const category = Types.map( name => {
+    return name
   })
+
+  function handleCreateNewRequest() {}
 
   return(
     <Container>
@@ -27,14 +34,14 @@ export function Card({ CoffeeSrc, Description, Title, Types }:CardProps) {
       <Purchase>
         <Price>R$ <span>9,90</span></Price>
         <HowManyItems>
-          <Minus cursor='pointer' size={14} color='purple'/>
+          <Minus onClick={LessItems} cursor='pointer' size={16} color='purple'/>
           <div>
-            1
+            {items}
           </div>
-          <Plus cursor='pointer' size={14} color='purple'/>
+          <Plus onClick={MoreItems} cursor='pointer' size={16} color='purple'/>
         </HowManyItems>
         <AddItems>
-          <ShoppingCart weight="fill" size={18} color='white' />
+          <ShoppingCart weight="fill" size={18} color='white' onClick={createNewRequest}/>
         </AddItems>
       </Purchase>
     </Container>
