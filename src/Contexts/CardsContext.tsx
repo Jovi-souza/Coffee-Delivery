@@ -10,12 +10,9 @@ interface Card {
 }
 
 interface CardsContextType {
-  Requests: Card[]
-  deleteRequest: ( requestToDelet: Card ) => void
-  createNewRequest: ( event: Card ) => void
+  items: number
   MoreItems: () => void
   LessItems: () => void
-  items: number
 }
 
 export const CardContext = createContext({} as CardsContextType)
@@ -26,11 +23,6 @@ interface props {
 
 export function CardsContext({children}: props ) {
 
-  const [Requests, setRequests] = useState<Card[]>([])
-
-  const [NewRequests, setNewRequests] = useState([])
-
-  
   const [items, setItems] = useState(0)
 
   function MoreItems() {
@@ -45,39 +37,17 @@ export function CardsContext({children}: props ) {
       return item - 1
     })
   }
-
-  function deleteRequest( requestToDelet: Card) {
-
-    const requestWithoutDeleteOne = Requests.filter( request => {
-      return request !== requestToDelet
-    })
-
-    setRequests(requestWithoutDeleteOne)
-  }
-
-  function createNewRequest( event: Card ) {
-    const teste: Card = {
-      CoffeeSrc: event.CoffeeSrc,
-      Title: event.Title
-    }
-
-    setRequests([...Requests, teste]) 
-    setNewRequests([])
-  }
-
+  
   // tenho que passar a função de deletar e a quatidade de itens do produto
   // tenho que passar a imagem e o nome do produto
 
   return(
     <CardContext.Provider 
-    value={{ 
-      Requests,
-      deleteRequest,
-      createNewRequest,
+    value={{
       LessItems,
       MoreItems,
       items
-    }}> 
+    }}>
       {children}
     </CardContext.Provider>
   )
