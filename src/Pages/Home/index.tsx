@@ -10,7 +10,7 @@ import {
   IconsContainer
 } from './styles'
 
-import { 
+import {
   ExpressoTradicional, ExpressoAmericano, ExpressoCremoso,
   ExpressoGelado, CafeComLeite, Capuccino, ChocolateQuente,
   Cubano, Havaiano, Irlandês, Latte, Macchiato, Mochaccino, Árabe

@@ -5,14 +5,17 @@ import {
 } from "react"
 
 interface Card {
-  Title: string,
   CoffeeSrc: String
+  Title: string,
 }
 
 interface CardsContextType {
+  requests: Card[]
   items: number
+  newRequests: Card[]
   MoreItems: () => void
   LessItems: () => void
+  creteNewRequest: ( data: Card ) => void
 }
 
 export const CardContext = createContext({} as CardsContextType)
@@ -22,6 +25,10 @@ interface props {
 }
 
 export function CardsContext({children}: props ) {
+
+  const [requests, setRequests] = useState<Card[]>([])
+
+  const [newRequests, setnewRequests] = useState([])
 
   const [items, setItems] = useState(0)
 
@@ -37,13 +44,26 @@ export function CardsContext({children}: props ) {
       return item - 1
     })
   }
-  
-  // tenho que passar a função de deletar e a quatidade de itens do produto
-  // tenho que passar a imagem e o nome do produto
+
+  function creteNewRequest( data: Card ) {
+
+    const newRequest: Card = {
+      CoffeeSrc: data.CoffeeSrc,
+      Title: data.Title,
+    }
+
+    console.log(data.CoffeeSrc)
+
+    setRequests( (state) => [...state, newRequest])
+    setnewRequests([])
+  }
 
   return(
     <CardContext.Provider 
     value={{
+      requests,
+      creteNewRequest,
+      newRequests,
       LessItems,
       MoreItems,
       items

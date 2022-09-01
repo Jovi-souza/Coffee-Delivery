@@ -4,13 +4,8 @@ import { Minus, Plus, Trash} from "phosphor-react";
 import { useContext } from "react";
 import { CardContext } from "../../Contexts/CardsContext";
 
-interface teste {
-  Titles: string,
-  CoffeeSrc: string
-}
+export function CoffeeCard( {} ) {
 
-export function CoffeeCard() {
-  
   const {MoreItems, LessItems, items} = useContext(CardContext)
 
   return(

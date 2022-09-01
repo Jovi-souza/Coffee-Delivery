@@ -1,5 +1,5 @@
 import { Minus, Plus, ShoppingCart } from "phosphor-react";
-import { useContext } from "react";
+import { MouseEventHandler, useContext } from "react";
 import { CardContext } from "../../Contexts/CardsContext";
 import { 
   CoffeeName, 
@@ -19,24 +19,26 @@ interface CardProps {
   Description: string
 }
 
-export function Card({ CoffeeSrc, Description, Title, Types }:CardProps) {
+export function Card( { ...props }:CardProps ) {
 
-  const { MoreItems, LessItems, items} = useContext(CardContext)
+  const { creteNewRequest, MoreItems, LessItems, items } = useContext(CardContext)
 
-  const category = Types.map( name => {
+  const category = props.Types.map( name => {
     return name
   })
 
+  const handleCreteNewRequest = creteNewRequest as unknown as MouseEventHandler
+
   return(
     <Container>
-      <img src={ CoffeeSrc } />
+      <img src={ props.CoffeeSrc } />
       <div>
         <SubTitle hasContent={ category[0] ? 'flex' : 'none'} >{category[0]}</SubTitle>
         <SubTitle hasContent={ category[1] ? 'flex' : 'none'} >{category[1]}</SubTitle>
         <SubTitle hasContent={ category[2] ? 'flex' : 'none'} >{category[2]}</SubTitle>
       </div>
-      <CoffeeName>{Title}</CoffeeName>
-      <Paragraph>{Description}</Paragraph>
+      <CoffeeName>{props.Title}</CoffeeName>
+      <Paragraph>{props.Description}</Paragraph>
       <Purchase>
         <Price>R$ <span>9,90</span></Price>
         <HowManyItems>
@@ -47,7 +49,7 @@ export function Card({ CoffeeSrc, Description, Title, Types }:CardProps) {
           <Plus onClick={MoreItems} cursor='pointer' size={16} color='purple'/>
         </HowManyItems>
         <AddItems>
-          <ShoppingCart weight="fill" size={18} color='white'/>
+          <ShoppingCart weight="fill" size={18} color='white' onClick={ handleCreteNewRequest }/>
         </AddItems>
       </Purchase>
     </Container>

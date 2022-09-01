@@ -5,6 +5,7 @@ import {
   MapPinLine, 
   Money 
 } from "phosphor-react";
+
 import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { CoffeeCard } from "../../Components/CoffeeCard";
@@ -25,7 +26,8 @@ import {
 
 export function Checkout() {
 
-  const { Requests } = useContext(CardContext)
+  const { requests } = useContext(CardContext)
+
   
   return(
     <Container>
@@ -59,9 +61,12 @@ export function Checkout() {
         <h1>Cafés selecionados</h1>
         <CartContainer>
           <Orders>
-          { Requests.map( () => {
+          { requests.map( () => {
               return (
-                <CoffeeCard />
+                <div>
+                  <CoffeeCard
+                  />
+                </div>
               )
           })}
           
