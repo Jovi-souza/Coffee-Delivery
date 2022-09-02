@@ -26,9 +26,10 @@ import {
 
 export function Checkout() {
 
-  const { requests } = useContext(CardContext)
-
+  const { requests } = useContext( CardContext )
   
+  console.log(requests)
+
   return(
     <Container>
       <ContainerWrap>
@@ -61,15 +62,15 @@ export function Checkout() {
         <h1>Cafés selecionados</h1>
         <CartContainer>
           <Orders>
-          { requests.map( () => {
+          { requests.map( (props) => {
               return (
-                <div>
-                  <CoffeeCard
-                  />
-                </div>
+                <CoffeeCard
+                  key={props.id}
+                  CoffeeSrc={props.CoffeeSrc}
+                  Title={props.Title}
+                />
               )
           })}
-          
           </Orders>
           <TotalPrice>
             <p>Total de itens <span>R$ 25</span></p>

@@ -18,7 +18,7 @@ export const PriceContainer = styled('div', {
   },
 })
 
-export const Title = styled('div', {
+export const Header = styled('div', {
   justifyContent: 'space-between',
 
   '& h2': {

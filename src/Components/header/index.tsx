@@ -6,7 +6,7 @@ import { useContext } from 'react';
 import { CardContext } from '../../Contexts/CardsContext';
 
 export function Header() {
-  const {items} = useContext(CardContext)
+  const {itemsInCart} = useContext(CardContext)
   
   return (
     <Container>
@@ -23,7 +23,7 @@ export function Header() {
           <NavLink className='NavLink' to="/Checkout" title="Cart">
             <ShoppingCart weight='fill' size={16} color='orange'/>
           </NavLink>
-          <p>{items}</p>
+          <p>{itemsInCart}</p>
         </ShoppingCartContainer>
       </LocaleAndCart >
     </Container>

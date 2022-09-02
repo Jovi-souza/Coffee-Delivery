@@ -1,21 +1,27 @@
-import { Button, Container, PriceContainer, Title } from "./styles";
+import { Button, Container, PriceContainer, Header } from "./styles";
 import { HowManyItems } from "../Cards/styles";
 import { Minus, Plus, Trash} from "phosphor-react";
 import { useContext } from "react";
 import { CardContext } from "../../Contexts/CardsContext";
 
-export function CoffeeCard( {} ) {
+interface CoffeeCardProps {
+  key: string
+  CoffeeSrc: string
+  Title: string
+}
 
-  const {MoreItems, LessItems, items} = useContext(CardContext)
+export function CoffeeCard( {CoffeeSrc, Title, key}:CoffeeCardProps ) {
+
+  const { MoreItems, LessItems, items } = useContext(CardContext)
 
   return(
-    <Container>
-      <img />
+    <Container key={key}>
+      <img src={CoffeeSrc} />
       <PriceContainer>
-        <Title>
-          <h2></h2>
+        <Header>
+          <h2>{Title}</h2>
           <p>R$ 9,90</p>
-        </Title>
+        </Header>
         <div>
           <HowManyItems>
             <Minus cursor='pointer' color="purple" size={14} onClick={LessItems}/>
@@ -30,4 +36,3 @@ export function CoffeeCard( {} ) {
     </Container>
   )
 }
-//onClick?: React.MouseEventHandler<SVGSVGElement> | undefined

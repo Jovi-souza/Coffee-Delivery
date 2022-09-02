@@ -10,11 +10,7 @@ import {
   IconsContainer
 } from './styles'
 
-import {
-  ExpressoTradicional, ExpressoAmericano, ExpressoCremoso,
-  ExpressoGelado, CafeComLeite, Capuccino, ChocolateQuente,
-  Cubano, Havaiano, Irlandês, Latte, Macchiato, Mochaccino, Árabe
-} from './Items/Coffees'
+import { Cofees } from './Items/Coffees'
 
 export function Home() {
 
@@ -55,20 +51,20 @@ export function Home() {
       </IntroContainer>
       <Title style={'cardTitle'}>Nossos Cafés</Title>
       <SectionItems>
-        <Card { ...ExpressoTradicional }/>
-        <Card {...ExpressoAmericano}/>
-        <Card {...ExpressoCremoso }/>
-        <Card {...ExpressoGelado} />
-        <Card {...CafeComLeite} />
-        <Card {...Latte} />
-        <Card {...Capuccino} />
-        <Card {...Macchiato} />
-        <Card {...Mochaccino} />
-        <Card {...ChocolateQuente} />
-        <Card {...Cubano} />
-        <Card {...Havaiano} />
-        <Card {...Árabe} />
-        <Card {...Irlandês} />
+        <Card {...Cofees.ExpressoTradicional}/>
+        <Card {...Cofees.ExpressoAmericano}/>
+        <Card {...Cofees.ExpressoCremoso }/>
+        <Card {...Cofees.ExpressoGelado} />
+        <Card {...Cofees.CafeComLeite} />
+        <Card {...Cofees.Latte} />
+        <Card {...Cofees.Capuccino} />
+        <Card {...Cofees.Macchiato} />
+        <Card {...Cofees.Mochaccino} />
+        <Card {...Cofees.ChocolateQuente} />
+        <Card {...Cofees.Cubano} />
+        <Card {...Cofees.Havaiano} />
+        <Card {...Cofees.Árabe} />
+        <Card {...Cofees.Irlandês} />
       </SectionItems>
     </div>
   )

@@ -1,5 +1,5 @@
 import { Minus, Plus, ShoppingCart } from "phosphor-react";
-import { MouseEventHandler, useContext } from "react";
+import { MouseEventHandler, useContext, useState } from "react";
 import { CardContext } from "../../Contexts/CardsContext";
 import { 
   CoffeeName, 
@@ -19,11 +19,12 @@ interface CardProps {
   Description: string
 }
 
-export function Card( { ...props }:CardProps ) {
 
-  const { creteNewRequest, MoreItems, LessItems, items } = useContext(CardContext)
+export function Card( { CoffeeSrc, Description, Title, Types }:CardProps ) {
 
-  const category = props.Types.map( name => {
+  const { creteNewRequest, LessItems, MoreItems, items } = useContext(CardContext)
+
+  const category = Types.map( name => {
     return name
   })
 
@@ -31,14 +32,14 @@ export function Card( { ...props }:CardProps ) {
 
   return(
     <Container>
-      <img src={ props.CoffeeSrc } />
+      <img src={ CoffeeSrc } />
       <div>
         <SubTitle hasContent={ category[0] ? 'flex' : 'none'} >{category[0]}</SubTitle>
         <SubTitle hasContent={ category[1] ? 'flex' : 'none'} >{category[1]}</SubTitle>
         <SubTitle hasContent={ category[2] ? 'flex' : 'none'} >{category[2]}</SubTitle>
       </div>
-      <CoffeeName>{props.Title}</CoffeeName>
-      <Paragraph>{props.Description}</Paragraph>
+      <CoffeeName>{Title}</CoffeeName>
+      <Paragraph>{Description}</Paragraph>
       <Purchase>
         <Price>R$ <span>9,90</span></Price>
         <HowManyItems>

@@ -5,37 +5,36 @@ import {
 } from "react"
 
 interface Card {
-  CoffeeSrc: String
-  Title: string,
+  id: string
+  CoffeeSrc: string
+  Title: string
 }
 
 interface CardsContextType {
   requests: Card[]
+  itemsInCart: number
   items: number
-  newRequests: Card[]
+  creteNewRequest: (data: Card) => void
   MoreItems: () => void
   LessItems: () => void
-  creteNewRequest: ( data: Card ) => void
 }
-
-export const CardContext = createContext({} as CardsContextType)
 
 interface props {
   children: ReactNode
 }
 
+export const CardContext = createContext( {} as CardsContextType)
+
 export function CardsContext({children}: props ) {
 
   const [requests, setRequests] = useState<Card[]>([])
-
-  const [newRequests, setnewRequests] = useState([])
-
+  
   const [items, setItems] = useState(0)
-
+  
   function MoreItems() {
     setItems( item => item + 1 ) 
   }
-
+  
   function LessItems() {
     setItems( item => {
       if( item <= 0 ) {
@@ -44,28 +43,30 @@ export function CardsContext({children}: props ) {
       return item - 1
     })
   }
-
+  
   function creteNewRequest( data: Card ) {
-
-    const newRequest: Card = {
+    
+    const id = String( new Date().getTime() )
+    
+    const newRequest  = {
+      id,
       CoffeeSrc: data.CoffeeSrc,
       Title: data.Title,
     }
-
-    console.log(data.CoffeeSrc)
-
-    setRequests( (state) => [...state, newRequest])
-    setnewRequests([])
+    
+    setRequests( (state) => [...state, newRequest] )
   }
+  
+  let itemsInCart = requests.length
 
   return(
     <CardContext.Provider 
     value={{
       requests,
       creteNewRequest,
-      newRequests,
-      LessItems,
+      itemsInCart,
       MoreItems,
+      LessItems,
       items
     }}>
       {children}
