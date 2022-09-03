@@ -1,6 +1,7 @@
 import { Minus, Plus, ShoppingCart } from "phosphor-react";
 import { MouseEventHandler, useContext, useState } from "react";
 import { CardContext } from "../../Contexts/CardsContext";
+import { Cofees } from "../../Pages/Home/Items/Coffees";
 import { 
   CoffeeName, 
   Container, 
@@ -22,21 +23,46 @@ interface CardProps {
 
 export function Card( { CoffeeSrc, Description, Title, Types }:CardProps ) {
 
-  const { creteNewRequest, LessItems, MoreItems, items } = useContext(CardContext)
+  const { createNewRequest } = useContext(CardContext)
 
   const category = Types.map( name => {
     return name
   })
 
-  const handleCreteNewRequest = creteNewRequest as unknown as MouseEventHandler
+  const id = String( new Date().getTime() )
+
+  const thisItem = {
+    id,
+    CoffeeSrc,
+    Title
+  }
+
+  function handleCreateNewRequest() {
+    createNewRequest(thisItem)
+  }
+
+  const [items, setItems] = useState(0)
+  
+  function MoreItems() {
+    setItems( item => item + 1 ) 
+  }
+  
+  function LessItems() {
+    setItems( item => {
+      if( item <= 0 ) {
+        return item = 0
+      }
+      return item - 1
+    })
+  }
 
   return(
     <Container>
       <img src={ CoffeeSrc } />
       <div>
-        <SubTitle hasContent={ category[0] ? 'flex' : 'none'} >{category[0]}</SubTitle>
-        <SubTitle hasContent={ category[1] ? 'flex' : 'none'} >{category[1]}</SubTitle>
-        <SubTitle hasContent={ category[2] ? 'flex' : 'none'} >{category[2]}</SubTitle>
+        <SubTitle hasContent={ category[0] ? 'flex' : 'none' } >{category[0]}</SubTitle>
+        <SubTitle hasContent={ category[1] ? 'flex' : 'none' } >{category[1]}</SubTitle>
+        <SubTitle hasContent={ category[2] ? 'flex' : 'none' } >{category[2]}</SubTitle>
       </div>
       <CoffeeName>{Title}</CoffeeName>
       <Paragraph>{Description}</Paragraph>
@@ -50,7 +76,7 @@ export function Card( { CoffeeSrc, Description, Title, Types }:CardProps ) {
           <Plus onClick={MoreItems} cursor='pointer' size={16} color='purple'/>
         </HowManyItems>
         <AddItems>
-          <ShoppingCart weight="fill" size={18} color='white' onClick={ handleCreteNewRequest }/>
+          <ShoppingCart weight="fill" size={18} color='white' onClick={ handleCreateNewRequest }/>
         </AddItems>
       </Purchase>
     </Container>

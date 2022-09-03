@@ -27,8 +27,6 @@ import {
 export function Checkout() {
 
   const { requests } = useContext( CardContext )
-  
-  console.log(requests)
 
   return(
     <Container>
