@@ -6,15 +6,17 @@ import { CardContext } from "../../Contexts/CardsContext";
 
 interface CoffeeCardProps {
   key: string
+  id: string
   CoffeeSrc: string
   Title: string
 }
 
-export function CoffeeCard( {CoffeeSrc, Title}:CoffeeCardProps ) {
-
+export function CoffeeCard( {CoffeeSrc, Title, id}:CoffeeCardProps ) {
   const { deleteRequest } = useContext( CardContext )
 
-  const handleDeleteRequest = deleteRequest as unknown as MouseEventHandler
+  function handleDeleteRequest() {
+    deleteRequest(id)
+  }
 
   return(
     <Container >
@@ -28,10 +30,13 @@ export function CoffeeCard( {CoffeeSrc, Title}:CoffeeCardProps ) {
           <HowManyItems>
             <Minus cursor='pointer' color="purple" size={14} />
             <div>
+              
             </div>
             <Plus cursor='pointer' color="purple" size={14} />
           </HowManyItems>
-          <Button><Trash color="purple" size={14} onClick={ handleDeleteRequest }/> Remover</Button>
+          <Button onClick={ handleDeleteRequest }>
+            <Trash color="purple" size={14}/> Remover
+          </Button>
         </div>
       </PriceContainer>
     </Container>

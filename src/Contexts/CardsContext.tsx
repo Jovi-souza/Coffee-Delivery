@@ -1,5 +1,5 @@
 import { 
-  createContext, 
+  createContext,
   ReactNode, 
   useState 
 } from "react"
@@ -14,7 +14,7 @@ interface CardsContextType {
   requests: Card[]
   itemsInCart: number
   createNewRequest: (data: Card) => void
-  deleteRequest: (requestToDelete: Card) => void
+  deleteRequest: (requestToDelete: string) => void
 }
 
 interface childrenProps {
@@ -24,27 +24,25 @@ interface childrenProps {
 export const CardContext = createContext( {} as CardsContextType)
 
 export function CardsContext({children}: childrenProps ) {
+
   const [requests, setRequests] = useState<Card[]>([])
 
   function createNewRequest( data: Card ) {
-
     const newRequest  = {
       id: data.id,
       CoffeeSrc: data.CoffeeSrc,
       Title: data.Title,
     }
-    
     setRequests( (state) => [...state, newRequest] )
   }
 
-  function deleteRequest(requestToDelete: Card) {
-
+  function deleteRequest( requestToDelete: string ) {
     const requestsWithoutDeleteOne = requests.filter( request => {
-        return request !== requestToDelete
+      return request.id !== requestToDelete
     })
 
-    setRequests(requestsWithoutDeleteOne)
-}
+    setRequests( requestsWithoutDeleteOne )
+  }
 
   let itemsInCart = requests.length
 

@@ -64,6 +64,7 @@ export function Checkout() {
               return (
                 <CoffeeCard
                   key={props.id}
+                  id={props.id}
                   CoffeeSrc={props.CoffeeSrc}
                   Title={props.Title}
                 />

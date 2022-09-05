@@ -1,7 +1,6 @@
 import { Minus, Plus, ShoppingCart } from "phosphor-react";
-import { MouseEventHandler, useContext, useState } from "react";
+import { useContext, useState } from "react";
 import { CardContext } from "../../Contexts/CardsContext";
-import { Cofees } from "../../Pages/Home/Items/Coffees";
 import { 
   CoffeeName, 
   Container, 
@@ -20,15 +19,14 @@ interface CardProps {
   Description: string
 }
 
-
-export function Card( { CoffeeSrc, Description, Title, Types }:CardProps ) {
+export function Card({ CoffeeSrc, Description, Title, Types }: CardProps) {
 
   const { createNewRequest } = useContext(CardContext)
 
   const category = Types.map( name => {
     return name
   })
-
+  
   const id = String( new Date().getTime() )
 
   const thisItem = {
@@ -75,8 +73,8 @@ export function Card( { CoffeeSrc, Description, Title, Types }:CardProps ) {
           </div>
           <Plus onClick={MoreItems} cursor='pointer' size={16} color='purple'/>
         </HowManyItems>
-        <AddItems>
-          <ShoppingCart weight="fill" size={18} color='white' onClick={ handleCreateNewRequest }/>
+        <AddItems onClick={ handleCreateNewRequest } >
+          <ShoppingCart weight="fill" size={18} color='white'/>
         </AddItems>
       </Purchase>
     </Container>
