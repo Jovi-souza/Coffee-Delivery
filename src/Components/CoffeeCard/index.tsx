@@ -1,7 +1,7 @@
 import { Button, Container, PriceContainer, Header } from "./styles";
 import { HowManyItems } from "../Cards/styles";
 import { Minus, Plus, Trash} from "phosphor-react";
-import { MouseEventHandler, useContext } from "react";
+import { useContext, useState } from "react";
 import { CardContext } from "../../Contexts/CardsContext";
 
 interface CoffeeCardProps {
@@ -11,8 +11,8 @@ interface CoffeeCardProps {
   Title: string
 }
 
-export function CoffeeCard( {CoffeeSrc, Title, id}:CoffeeCardProps ) {
-  const { deleteRequest } = useContext( CardContext )
+export function CoffeeCard( {CoffeeSrc, Title, id  }:CoffeeCardProps ) {
+  const { deleteRequest, items, MoreItems, LessItems } = useContext( CardContext )
 
   function handleDeleteRequest() {
     deleteRequest(id)
@@ -28,11 +28,11 @@ export function CoffeeCard( {CoffeeSrc, Title, id}:CoffeeCardProps ) {
         </Header>
         <div>
           <HowManyItems>
-            <Minus cursor='pointer' color="purple" size={14} />
+            <Minus cursor='pointer' color="purple" size={14} onClick={LessItems} />
             <div>
-              
+              {items}
             </div>
-            <Plus cursor='pointer' color="purple" size={14} />
+            <Plus cursor='pointer' color="purple" size={14} onClick={MoreItems} />
           </HowManyItems>
           <Button onClick={ handleDeleteRequest }>
             <Trash color="purple" size={14}/> Remover

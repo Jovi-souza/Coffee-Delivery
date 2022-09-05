@@ -164,21 +164,31 @@ export const TotalPrice = styled('div', {
     fontSize: '2rem',
     color: '$basetitle'
   },
+})
 
-  '& button': {
-    border: 'none',
-    borderRadius: '5px',
-    color: '$white',
-    backgroundColor: '$yellow',
-    padding: '1rem',
-    width: '100%',
-    fontSize: '1.5rem',
-    fontWeight: 'bold',
-    textTransform: 'uppercase',
-    transition: '.2s',
-    
-    '&:hover': {
-      backgroundColor: '$yellowDark',
+export const PaymentButton = styled('button', {
+  border: 'none',
+  borderRadius: '5px',
+  color: '$white',
+  backgroundColor: '$yellow',
+  padding: '1rem',
+  width: '100%',
+  fontSize: '1.5rem',
+  fontWeight: 'bold',
+  textTransform: 'uppercase',
+  transition: '.2s',
+  
+  variants: {
+    hasItems: {
+      yes: {
+        cursor: 'pointer',
+        '&:hover': {
+          backgroundColor: '$yellowDark'
+        }
+      },
+      no: {
+        display: 'none'
+      }
     }
-  }
+  },
 })

@@ -13,6 +13,9 @@ interface Card {
 interface CardsContextType {
   requests: Card[]
   itemsInCart: number
+  items: number
+  MoreItems: () => void
+  LessItems: () => void
   createNewRequest: (data: Card) => void
   deleteRequest: (requestToDelete: string) => void
 }
@@ -23,9 +26,10 @@ interface childrenProps {
 
 export const CardContext = createContext( {} as CardsContextType)
 
-export function CardsContext({children}: childrenProps ) {
+export function CardsContext( {children}: childrenProps ) {
 
   const [requests, setRequests] = useState<Card[]>([])
+  const [items, setItems] = useState(0)
 
   function createNewRequest( data: Card ) {
     const newRequest  = {
@@ -44,6 +48,19 @@ export function CardsContext({children}: childrenProps ) {
     setRequests( requestsWithoutDeleteOne )
   }
 
+  function MoreItems() {
+    setItems( item => item + 1 ) 
+  }
+  
+  function LessItems() {
+    setItems( item => {
+      if( item <= 0 ) {
+        return item = 0
+      }
+      return item - 1
+    })
+  }
+
   let itemsInCart = requests.length
 
   return(
@@ -53,6 +70,9 @@ export function CardsContext({children}: childrenProps ) {
       createNewRequest,
       deleteRequest,
       itemsInCart,
+      items,
+      MoreItems,
+      LessItems
     }}>
       {children}
     </CardContext.Provider>
