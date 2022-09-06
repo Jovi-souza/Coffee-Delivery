@@ -6,6 +6,7 @@ import {
   Money,
 } from "phosphor-react";
 
+import { useForm } from "react-hook-form";
 import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { CoffeeCard } from "../../Components/CoffeeCard";
@@ -14,7 +15,6 @@ import { CardContext } from "../../Contexts/CardsContext";
 import {
   CartContainer,
   Container,
-  FormContainer,
   Inputs,
   HeaderContainer,
   PaymentContainer,
@@ -26,30 +26,64 @@ import {
 } from "./styles";
 
 export function Checkout() {
-  const { requests, itemsInCart } = useContext(CardContext);
+  const { requests, itemsInCart, typeOfPayment, submitClientsData } =
+    useContext(CardContext);
 
-  // endereço: { Rua: string, bairro: string, número: number}
-  // tipo de pagamento
+  const { register, handleSubmit } = useForm();
+
+  function handleSubmitClientsData( data: any ) {
+    console.log(data)
+  }
 
   return (
     <Container>
       <ContainerWrap>
         <h1>Complete seu pedido</h1>
-        <FormContainer>
           <HeaderContainer>
             <h2>
               <MapPinLine color="orange" /> Endereço de entrega
             </h2>
             <p>informe o endereço onde deseja receber seu pedido</p>
           </HeaderContainer>
-          <Inputs placeholder="CEP" type="text" width={"small"} />
-          <Inputs placeholder="Rua" type="text" width={"full"} />
-          <Inputs placeholder="Número" type="text" width={"small"} />
-          <Inputs placeholder="Complemento" type="text" width={"medium"} />
-          <Inputs placeholder="Bairro" type="text" width={"small"} />
-          <Inputs placeholder="Cidade" type="text" width={"small"} />
-          <Inputs placeholder="UF" type="text" width={"small"} />
-        </FormContainer>
+        <form onSubmit={handleSubmit(handleSubmitClientsData)} action=''>
+          <Inputs
+            placeholder="CEP"
+            id="CEP"
+            type="text"
+            width={"small"}
+            {...register("CEP", { required: true })}
+          />
+          <Inputs
+            placeholder="Rua"
+            id="Rua"
+            type="text"
+            width={"full"}
+            {...register("Rua", { required: true })}
+          />
+          <Inputs
+            placeholder="Número"
+            id="Número"
+            type="text"
+            width={"small"}
+            {...register("Número", { required: true })}
+          />
+          <Inputs placeholder="Complemento" id="Complemento" type="text" width={"medium"} />
+          <Inputs placeholder="Bairro" id="Bairro" type="text" width={"small"} />
+          <Inputs
+            placeholder="Cidade"
+            id="Cidade"
+            type="text"
+            width={"small"}
+            {...register("Cidade", { required: true })}
+          />
+          <Inputs
+            placeholder="UF"
+            id="UF"
+            type="text"
+            width={"small"}
+            {...register("UF", { required: true })}
+          />
+        </form>
         <PaymentContainer>
           <HeaderContainer>
             <h2>
@@ -59,15 +93,15 @@ export function Checkout() {
               O pagamento é feito na entrega. Escolha a forma que deseja pagar
             </p>
           </HeaderContainer>
-          <Button>
+          <Button value="Cartão de crédito" onClick={typeOfPayment}>
             <CreditCard color="purple" size={16} /> Cartão de crédito
           </Button>
-          <Button>
+          <Button value="Cartão de débito" onClick={typeOfPayment}>
             <Bank color="purple" size={16} /> Cartão de débito
           </Button>
-          <Button>
+          <Button value="Dinheiro" onClick={typeOfPayment}>
             <Money color="purple" size={16} />
-            dinheiro
+            Dinheiro
           </Button>
         </PaymentContainer>
       </ContainerWrap>
@@ -98,7 +132,7 @@ export function Checkout() {
               Total <span>R$ 25</span>
             </h2>
             <NavLink to="/Success" title="Success">
-              <PaymentButton hasItems={ itemsInCart ? "yes" : "no"}>
+              <PaymentButton hasItems={itemsInCart ? "yes" : "no"}>
                 Confirmar pedido
               </PaymentButton>
             </NavLink>

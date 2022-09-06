@@ -1,80 +1,91 @@
-import { 
-  createContext,
-  ReactNode, 
-  useState 
-} from "react"
+import { createContext, ReactNode, useState } from "react";
+import { useForm } from "react-hook-form";
 
 interface Card {
-  id: string
-  CoffeeSrc: string
-  Title: string
+  id: string;
+  CoffeeSrc: string;
+  Title: string;
 }
 
 interface CardsContextType {
-  requests: Card[]
-  itemsInCart: number
-  items: number
-  MoreItems: () => void
-  LessItems: () => void
-  createNewRequest: (data: Card) => void
-  deleteRequest: (requestToDelete: string) => void
+  requests: Card[];
+  itemsInCart: number;
+  items: number;
+  MoreItems: () => void;
+  LessItems: () => void;
+  createNewRequest: (data: Card) => void;
+  deleteRequest: (requestToDelete: string) => void;
+  typeOfPayment: () => void;
+  submitClientsData: (data: any) => void;
 }
 
 interface childrenProps {
-  children: ReactNode
+  children: ReactNode;
 }
 
-export const CardContext = createContext( {} as CardsContextType)
+export const CardContext = createContext({} as CardsContextType);
 
-export function CardsContext( {children}: childrenProps ) {
+export function CardsContext({ children }: childrenProps) {
+  const [requests, setRequests] = useState<Card[]>([]);
+  const [items, setItems] = useState(0);
 
-  const [requests, setRequests] = useState<Card[]>([])
-  const [items, setItems] = useState(0)
-
-  function createNewRequest( data: Card ) {
-    const newRequest  = {
+  function createNewRequest(data: Card) {
+    const newRequest = {
       id: data.id,
       CoffeeSrc: data.CoffeeSrc,
       Title: data.Title,
-    }
-    setRequests( (state) => [...state, newRequest] )
+    };
+    setRequests((state) => [...state, newRequest]);
   }
 
-  function deleteRequest( requestToDelete: string ) {
-    const requestsWithoutDeleteOne = requests.filter( request => {
-      return request.id !== requestToDelete
-    })
+  function deleteRequest(requestToDelete: string) {
+    const requestsWithoutDeleteOne = requests.filter((request) => {
+      return request.id !== requestToDelete;
+    });
 
-    setRequests( requestsWithoutDeleteOne )
+    setRequests(requestsWithoutDeleteOne);
   }
 
   function MoreItems() {
-    setItems( item => item + 1 ) 
+    setItems((item) => item + 1);
   }
-  
+
   function LessItems() {
-    setItems( item => {
-      if( item <= 0 ) {
-        return item = 0
+    setItems((item) => {
+      if (item <= 0) {
+        return (item = 0);
       }
-      return item - 1
-    })
+      return item - 1;
+    });
   }
 
-  let itemsInCart = requests.length
+  let itemsInCart = requests.length;
 
-  return(
-    <CardContext.Provider 
-    value={{
-      requests,
-      createNewRequest,
-      deleteRequest,
-      itemsInCart,
-      items,
-      MoreItems,
-      LessItems
-    }}>
+  // endereço: { Rua: string, bairro: string, número: number}
+
+  // tipo de pagamento
+
+  function typeOfPayment() {}
+
+  function submitClientsData(data: any) {
+    console.log(data);
+  }
+
+  return (
+    <CardContext.Provider
+      value={{
+        requests,
+        createNewRequest,
+        deleteRequest,
+        itemsInCart,
+        items,
+        MoreItems,
+        LessItems,
+        typeOfPayment,
+        submitClientsData,
+      }}
+    >
       {children}
     </CardContext.Provider>
-  )
+  );
 }

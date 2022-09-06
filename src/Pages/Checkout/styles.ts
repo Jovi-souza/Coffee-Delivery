@@ -12,23 +12,21 @@ export const ContainerWrap = styled('div', {
 
   '& h1': {
     mb: '1rem'
-  }
-})
+  },
 
-export const FormContainer = styled('form', {
-  display: 'flex',
-  flexWrap:'wrap',
-  width: '50vw',
-  padding: '3rem',
-  gap: '1.75rem 1rem',
-  backgroundColor: '$baseCard',
-  
-  '& div': {
-    width: '100%'
-  }
+  '& form': {
+    display: 'flex',
+    flexWrap:'wrap',
+    width: '50vw',
+    padding: '3rem',
+    gap: '1.75rem 1rem',
+    backgroundColor: '$baseCard',
+  },
 })
 
 export const HeaderContainer = styled('div', {
+  width: '100%',
+  
   '& h2': {
     display: 'flex',
     alignItems: 'center',
@@ -94,7 +92,7 @@ export const Button = styled('button', {
   display: 'flex',
   alignItems: 'center',
   gap: '1rem',
-  border: 'none',
+  border: '1px solid transparent',
   borderRadius: '5px',
   backgroundColor: '$baseButton',
   padding: '1.5rem 3rem',
@@ -108,7 +106,7 @@ export const Button = styled('button', {
 
   '&:focus': {
     backgroundColor: '$purpleLight',
-    outlineColor: '$purple',
+    border: '1px solid $purple'
   }
 })
 
