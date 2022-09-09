@@ -1,6 +1,6 @@
 import { styled } from "../../styles/stitches.config";
 
-export const Container = styled('div', {
+export const FormContainer = styled('form', {
   display: 'flex',
   flexWrap: 'wrap',
   gap: '5rem'
@@ -13,15 +13,15 @@ export const ContainerWrap = styled('div', {
   '& h1': {
     mb: '1rem'
   },
+})
 
-  '& form': {
-    display: 'flex',
-    flexWrap:'wrap',
-    width: '50vw',
-    padding: '3rem',
-    gap: '1.75rem 1rem',
-    backgroundColor: '$baseCard',
-  },
+export const InputsContainer = styled('div', {
+  display: 'flex',
+  flexWrap:'wrap',
+  width: '50vw',
+  padding: '3rem',
+  gap: '1.75rem 1rem',
+  backgroundColor: '$baseCard',
 })
 
 export const HeaderContainer = styled('div', {
