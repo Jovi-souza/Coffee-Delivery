@@ -9,10 +9,8 @@ import {
 import { useContext } from "react";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import { NavLink } from "react-router-dom";
-import * as zod from "zod";
 import { CoffeeCard } from "../../Components/CoffeeCard";
 import { CardContext } from "../../Contexts/CardsContext";
-
 import {
   CartContainer,
   HeaderContainer,
@@ -27,24 +25,14 @@ import {
   InputsContainer,
 } from "./styles";
 
-interface dataProps {
-  cep: "",
-  rua: "",
-  complemento: "",
-  numero: "",
-  bairro: "",
-  cidade: "",
-  uf: "",
-}
-
 export function Checkout() {
-  const { requests, itemsInCart, submitClientDatas } =
-    useContext(CardContext);
+  const { requests, itemsInCart, submitClientDatas } = useContext(CardContext);
 
   const { register, handleSubmit } = useForm();
-  function handleSubmitClientDatas(data: SubmitHandler<FieldValues>) {
-    submitClientDatas(data)
-  } 
+
+  const handleSubmitClientDatas =
+    submitClientDatas as SubmitHandler<FieldValues>;
+
   return (
     <FormContainer>
       <ContainerWrap>
