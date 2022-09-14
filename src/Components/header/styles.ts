@@ -1,10 +1,10 @@
-import { styled } from "../../styles/stitches.config"
+import { styled } from '../../styles/stitches.config'
 
 export const Container = styled('header', {
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center',
-  padding: '2rem 0'
+  padding: '2rem 0',
 })
 
 export const LocaleAndCart = styled('div', {
@@ -13,7 +13,7 @@ export const LocaleAndCart = styled('div', {
   justifyContent: 'space-between',
   alignItems: 'center',
   fontSize: '1.25rem',
-  
+
   '& .MapPin': {
     borderRadius: '5px',
     backgroundColor: '$purpleLight',
@@ -29,14 +29,14 @@ export const LocaleAndCart = styled('div', {
     borderRadius: '5px',
     backgroundColor: '$purpleLight',
     color: '$purpleDark',
-  }
+  },
 })
 
 export const ShoppingCartContainer = styled('div', {
   display: 'flex',
   gap: '1rem',
   position: 'relative',
-  
+
   '& .NavLink': {
     padding: '.65rem 1rem',
     borderRadius: '5px',
@@ -62,13 +62,13 @@ export const ShoppingCartContainer = styled('div', {
 
     variants: {
       hasItems: {
-        flex: { 
-          display: 'flex'
+        flex: {
+          display: 'flex',
         },
-        none: { 
-          display: 'none' 
+        none: {
+          display: 'none',
         },
       },
     },
-  }
+  },
 })

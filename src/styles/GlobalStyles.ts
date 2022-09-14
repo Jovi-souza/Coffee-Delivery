@@ -1,4 +1,4 @@
-import { globalCss } from './stitches.config';
+import { globalCss } from './stitches.config'
 
 export const GlobalCss = globalCss({
   '*': {
@@ -12,14 +12,14 @@ export const GlobalCss = globalCss({
     backgroundColor: '$background',
   },
 
-  h1:{
-    fontFamily: 'Baloo2, cursive'
+  h1: {
+    fontFamily: 'Baloo2, cursive',
   },
 
   html: {
     fontSize: '62.5%',
     scrollBehavior: 'smooth',
-    fontFamily: 'Roboto, sans-serif'
+    fontFamily: 'Roboto, sans-serif',
   },
 
   button: {
@@ -30,5 +30,4 @@ export const GlobalCss = globalCss({
     opacity: 0.6,
     cursor: 'not-allowed',
   },
-
-});
+})

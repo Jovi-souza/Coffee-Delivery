@@ -4,13 +4,13 @@ import {
   CurrencyDollarSimple,
   MapPinLine,
   Money,
-} from "phosphor-react";
+} from 'phosphor-react'
 
-import { useContext } from "react";
-import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
-import { NavLink } from "react-router-dom";
-import { CoffeeCard } from "../../Components/CoffeeCard";
-import { CardContext } from "../../Contexts/CardsContext";
+import { useContext } from 'react'
+import { FieldValues, SubmitHandler, useForm } from 'react-hook-form'
+import { NavLink } from 'react-router-dom'
+import { CoffeeCard } from '../../Components/CoffeeCard'
+import { CardContext } from '../../Contexts/CardsContext'
 import {
   CartContainer,
   HeaderContainer,
@@ -23,18 +23,18 @@ import {
   Inputs,
   FormContainer,
   InputsContainer,
-} from "./styles";
+} from './styles'
 
 export function Checkout() {
-  const { requests, itemsInCart, submitClientDatas } = useContext(CardContext);
+  const { requests, submitClientDatas } = useContext(CardContext)
 
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit } = useForm()
 
   const handleSubmitClientDatas =
-    submitClientDatas as SubmitHandler<FieldValues>;
+    submitClientDatas as SubmitHandler<FieldValues>
 
   return (
-    <FormContainer>
+    <FormContainer onSubmit={handleSubmit(handleSubmitClientDatas)}>
       <ContainerWrap>
         <InputsContainer>
           <h1>Complete seu pedido</h1>
@@ -48,49 +48,49 @@ export function Checkout() {
             placeholder="CEP"
             id="CEP"
             type="text"
-            width={"small"}
-            {...register("cep")}
+            width={'small'}
+            {...register('cep')}
           />
           <Inputs
             placeholder="Rua"
             id="rua"
             type="text"
-            width={"full"}
+            width={'full'}
             required
-            {...register("rua")}
+            {...register('rua')}
           />
           <Inputs
             placeholder="Número"
             type="text"
-            width={"small"}
+            width={'small'}
             required
-            {...register("numero")}
+            {...register('numero')}
           />
           <Inputs
             placeholder="Complemento"
             type="text"
-            width={"medium"}
-            {...register("complemento")}
+            width={'medium'}
+            {...register('complemento')}
           />
           <Inputs
             placeholder="Bairro"
             type="text"
-            width={"small"}
+            width={'small'}
             required
-            {...register("bairro")}
+            {...register('bairro')}
           />
           <Inputs
             placeholder="Cidade"
             type="text"
-            width={"small"}
-            {...register("cidade")}
+            width={'small'}
+            {...register('cidade')}
           />
           <Inputs
             placeholder="UF"
             type="text"
-            width={"small"}
+            width={'small'}
             required
-            {...register("uf")}
+            {...register('uf')}
           />
         </InputsContainer>
         <PaymentContainer>
@@ -127,7 +127,7 @@ export function Checkout() {
                   CoffeeSrc={props.CoffeeSrc}
                   Title={props.Title}
                 />
-              );
+              )
             })}
           </Orders>
           <TotalPrice>
@@ -140,10 +140,10 @@ export function Checkout() {
             <h2>
               Total <span>R$ 25</span>
             </h2>
-            <NavLink to="/Success" title="Success">
+            <NavLink to="/success">
               <PaymentButton
-                hasItems={itemsInCart ? "yes" : "no"}
-                onClick={handleSubmit(handleSubmitClientDatas)}
+                // hasItems={itemsInCart ? "yes" : "no"}
+                type="submit"
               >
                 Confirmar pedido
               </PaymentButton>
@@ -152,5 +152,5 @@ export function Checkout() {
         </CartContainer>
       </ContainerWrap>
     </FormContainer>
-  );
+  )
 }

@@ -1,11 +1,6 @@
-import { createStitches } from '@stitches/react';
+import { createStitches } from '@stitches/react'
 
-export const {
-  styled,
-  globalCss,
-  createTheme,
-  css,
-} = createStitches({
+export const { styled, globalCss, createTheme, css } = createStitches({
   utils: {
     m: (value: string | number) => ({
       margin: value,
@@ -94,8 +89,7 @@ export const {
       5: '3.6rem',
       6: '4rem',
     },
-    fonts: {
-    },
+    fonts: {},
     fontWeights: {},
     lineHeights: {},
     letterSpacings: {},
@@ -113,4 +107,4 @@ export const {
     zIndices: {},
     transitions: {},
   },
-});
+})

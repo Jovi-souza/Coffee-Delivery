@@ -1,8 +1,8 @@
-import { Button, Container, PriceContainer, Header } from "./styles";
-import { HowManyItems } from "../Cards/styles";
-import { Minus, Plus, Trash} from "phosphor-react";
-import { useContext, useState } from "react";
-import { CardContext } from "../../Contexts/CardsContext";
+import { Button, Container, PriceContainer, Header } from './styles'
+import { HowManyItems } from '../Cards/styles'
+import { Minus, Plus, Trash } from 'phosphor-react'
+import { useContext, useState } from 'react'
+import { CardContext } from '../../Contexts/CardsContext'
 
 interface CoffeeCardProps {
   key: string
@@ -11,15 +11,15 @@ interface CoffeeCardProps {
   Title: string
 }
 
-export function CoffeeCard( {CoffeeSrc, Title, id  }:CoffeeCardProps ) {
-  const { deleteRequest, items, MoreItems, LessItems } = useContext( CardContext )
+export function CoffeeCard({ CoffeeSrc, Title, id }: CoffeeCardProps) {
+  const { deleteRequest, items, MoreItems, LessItems } = useContext(CardContext)
 
   function handleDeleteRequest() {
     deleteRequest(id)
   }
 
-  return(
-    <Container >
+  return (
+    <Container>
       <img src={CoffeeSrc} />
       <PriceContainer>
         <Header>
@@ -28,14 +28,22 @@ export function CoffeeCard( {CoffeeSrc, Title, id  }:CoffeeCardProps ) {
         </Header>
         <div>
           <HowManyItems>
-            <Minus cursor='pointer' color="purple" size={14} onClick={LessItems} />
-            <div>
-              {items}
-            </div>
-            <Plus cursor='pointer' color="purple" size={14} onClick={MoreItems} />
+            <Minus
+              cursor="pointer"
+              color="purple"
+              size={14}
+              onClick={LessItems}
+            />
+            <div>{items}</div>
+            <Plus
+              cursor="pointer"
+              color="purple"
+              size={14}
+              onClick={MoreItems}
+            />
           </HowManyItems>
-          <Button onClick={ handleDeleteRequest }>
-            <Trash color="purple" size={14}/> Remover
+          <Button onClick={handleDeleteRequest}>
+            <Trash color="purple" size={14} /> Remover
           </Button>
         </div>
       </PriceContainer>

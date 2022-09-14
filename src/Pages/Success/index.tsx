@@ -1,14 +1,15 @@
-import Illustration from "../../images/Illustration.svg";
-import { CurrencyDollar, MapPin, Timer } from "phosphor-react";
+import Illustration from '../../images/Illustration.svg'
+import { CurrencyDollar, MapPin, Timer } from 'phosphor-react'
 
-import { Container, Paragraph, TitleContainer, YourRequest } from "./styles";
-import { IconsContainer } from "../Home/styles";
-import { useContext } from "react";
-import { CardContext } from "../../Contexts/CardsContext";
+import { Container, Paragraph, TitleContainer, YourRequest } from './styles'
+import { IconsContainer } from '../Home/styles'
+import { useContext } from 'react'
+import { CardContext } from '../../Contexts/CardsContext'
 
 export function Success() {
-  const {  } = useContext(CardContext);
+  const { datasInfos } = useContext(CardContext)
 
+  console.log(datasInfos)
   return (
     <Container>
       <div>
@@ -18,30 +19,25 @@ export function Success() {
         </TitleContainer>
         <YourRequest>
           <div>
-            <IconsContainer style={"purple"}>
+            <IconsContainer style={'purple'}>
               <MapPin size={16} color="white" weight="fill" />
             </IconsContainer>
             <Paragraph>
-              Entrega em <strong>{rua}</strong>
-              <strong>
-                {numero} {bairro}
-              </strong>
-              <strong>
-                {numero} {bairro}
-              </strong>
-              , <strong>{uf}</strong>
+              Entrega em <strong></strong>
+              <strong></strong>
+              <strong></strong>, <strong></strong>
             </Paragraph>
           </div>
 
           <div>
-            <IconsContainer style={"yellow"}>
+            <IconsContainer style={'yellow'}>
               <Timer size={16} color="white" weight="fill" />
             </IconsContainer>
             <Paragraph>Previsão de entrega 20 min - 30 min</Paragraph>
           </div>
 
           <div>
-            <IconsContainer style={"yellowDark"}>
+            <IconsContainer style={'yellowDark'}>
               <CurrencyDollar size={16} color="white" />
             </IconsContainer>
             <Paragraph>
@@ -50,7 +46,7 @@ export function Success() {
           </div>
         </YourRequest>
       </div>
-      <img src={Illustration} />
+      <img src={Illustration} alt="" />
     </Container>
-  );
+  )
 }

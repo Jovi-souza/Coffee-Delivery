@@ -15,10 +15,10 @@ import ÁrabeSvg from '../../../images/Árabe.svg'
 
 export const Cofees = {
   ExpressoTradicional: {
-    CoffeeSrc: ExpressoTradicionalSvg ,
-    Types:['Tradicional'],
-    Title:'Expresso Tradicional',
-    Description:'O tradicional café feito com água quente e grãos moídos',
+    CoffeeSrc: ExpressoTradicionalSvg,
+    Types: ['Tradicional'],
+    Title: 'Expresso Tradicional',
+    Description: 'O tradicional café feito com água quente e grãos moídos',
   },
   ExpressoAmericano: {
     CoffeeSrc: ExpressoAmericanoSvg,
@@ -33,10 +33,10 @@ export const Cofees = {
     Description: 'Café expresso tradicional com espuma cremosa',
   },
   ExpressoGelado: {
-    CoffeeSrc:ExpressoGeladoSvg,
-    Types:['Tradicional', 'Gelado'],
-    Title:'Expresso Gelado',
-    Description:'Bebida preparada com café expresso e cubos de gelo',
+    CoffeeSrc: ExpressoGeladoSvg,
+    Types: ['Tradicional', 'Gelado'],
+    Title: 'Expresso Gelado',
+    Description: 'Bebida preparada com café expresso e cubos de gelo',
   },
   CafeComLeite: {
     CoffeeSrc: CafeComLeiteSvg,
@@ -48,19 +48,22 @@ export const Cofees = {
     CoffeeSrc: LatteSvg,
     Types: ['Tradicional', 'com leite'],
     Title: 'Latte',
-    Description: 'Uma dose de café expresso com o dobro de leite e espuma cremosa',
+    Description:
+      'Uma dose de café expresso com o dobro de leite e espuma cremosa',
   },
   Capuccino: {
     CoffeeSrc: CapuccinoSvg,
     Types: ['Tradicional', 'com leite'],
     Title: 'Capuccino',
-    Description: 'Bebida com canela feita de doses iguais de café, leite e espuma',
+    Description:
+      'Bebida com canela feita de doses iguais de café, leite e espuma',
   },
   Macchiato: {
     CoffeeSrc: MacchiatoSvg,
     Types: ['Tradicional', 'com leite'],
     Title: 'Macchiato ',
-    Description: 'Café expresso misturado com um pouco de leite quente e espuma',
+    Description:
+      'Café expresso misturado com um pouco de leite quente e espuma',
   },
   Mochaccino: {
     CoffeeSrc: MochaccinoSvg,
@@ -78,7 +81,8 @@ export const Cofees = {
     CoffeeSrc: CubanoSvg,
     Types: ['Especial', 'alcoólico', 'Gelado'],
     Title: 'Cubano ',
-    Description: 'Drink gelado de café expresso com rum, creme de leite e hortelã',
+    Description:
+      'Drink gelado de café expresso com rum, creme de leite e hortelã',
   },
   Havaiano: {
     CoffeeSrc: HavaianoSvg,

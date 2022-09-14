@@ -1,9 +1,9 @@
-import { styled } from "../../styles/stitches.config";
+import { styled } from '../../styles/stitches.config'
 
 export const FormContainer = styled('form', {
   display: 'flex',
   flexWrap: 'wrap',
-  gap: '5rem'
+  gap: '5rem',
 })
 
 export const ContainerWrap = styled('div', {
@@ -11,13 +11,13 @@ export const ContainerWrap = styled('div', {
   flexDirection: 'column',
 
   '& h1': {
-    mb: '1rem'
+    mb: '1rem',
   },
 })
 
 export const InputsContainer = styled('div', {
   display: 'flex',
-  flexWrap:'wrap',
+  flexWrap: 'wrap',
   width: '50vw',
   padding: '3rem',
   gap: '1.75rem 1rem',
@@ -26,19 +26,19 @@ export const InputsContainer = styled('div', {
 
 export const HeaderContainer = styled('div', {
   width: '100%',
-  
+
   '& h2': {
     display: 'flex',
     alignItems: 'center',
     fontSize: '2rem',
-    color: '$baseSubTitle'
+    color: '$baseSubTitle',
   },
-  
+
   '& p': {
     color: '$baseText',
     fontSize: '1.5rem',
-    margin: '1rem 0 0 2.25rem'
-  }
+    margin: '1rem 0 0 2.25rem',
+  },
 })
 
 export const Inputs = styled('input', {
@@ -55,19 +55,19 @@ export const Inputs = styled('input', {
   '&::placeholder': {
     display: 'flex',
     alignContent: 'flex-end',
-    gap: '10rem'
+    gap: '10rem',
   },
 
   variants: {
     width: {
       small: {
-        width: '32.2%'
+        width: '32.2%',
       },
       medium: {
-        width: '66%'
+        width: '66%',
       },
       full: {
-        width: '100%'
+        width: '100%',
       },
     },
   },
@@ -85,7 +85,7 @@ export const PaymentContainer = styled('div', {
   '& div': {
     width: '100%',
     mb: '1.25rem',
-  }
+  },
 })
 
 export const Button = styled('button', {
@@ -101,20 +101,20 @@ export const Button = styled('button', {
   transition: '.2s',
 
   '&:hover': {
-    backgroundColor: '$baseHover'
+    backgroundColor: '$baseHover',
   },
 
   '&:focus': {
     backgroundColor: '$purpleLight',
-    border: '1px solid $purple'
-  }
+    border: '1px solid $purple',
+  },
 })
 
 export const CartContainer = styled('div', {
   backgroundColor: '$baseCard',
   width: '35vw',
   padding: '3rem',
-  borderRadius: '5px 50px 5px 50px'
+  borderRadius: '5px 50px 5px 50px',
 })
 
 export const Orders = styled('div', {
@@ -128,16 +128,16 @@ export const Orders = styled('div', {
   '&::-webkit-scrollbar': {
     width: '6px',
   },
-  
+
   '&::-webkit-scrollbar-track': {
-    background: '$baseHover'    
+    background: '$baseHover',
   },
-  
+
   '&::-webkit-scrollbar-thumb': {
-    backgroundColor: '$yellow',    
-    borderRadius: '20px',     
-    border: '1px solid #000'  
-  }
+    backgroundColor: '$yellow',
+    borderRadius: '20px',
+    border: '1px solid #000',
+  },
 })
 
 export const TotalPrice = styled('div', {
@@ -153,14 +153,14 @@ export const TotalPrice = styled('div', {
     display: 'flex',
     justifyContent: 'space-between',
     fontSize: '1.5rem',
-    color: '$baseText'
+    color: '$baseText',
   },
 
   '& h2': {
     display: 'flex',
     justifyContent: 'space-between',
     fontSize: '2rem',
-    color: '$basetitle'
+    color: '$basetitle',
   },
 })
 
@@ -175,18 +175,18 @@ export const PaymentButton = styled('button', {
   fontWeight: 'bold',
   textTransform: 'uppercase',
   transition: '.2s',
-  
+
   variants: {
     hasItems: {
       yes: {
         cursor: 'pointer',
         '&:hover': {
-          backgroundColor: '$yellowDark'
-        }
+          backgroundColor: '$yellowDark',
+        },
       },
       no: {
-        display: 'none'
-      }
-    }
+        display: 'none',
+      },
+    },
   },
 })

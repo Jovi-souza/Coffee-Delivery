@@ -1,4 +1,4 @@
-import { styled } from "../../styles/stitches.config";
+import { styled } from '../../styles/stitches.config'
 
 export const Container = styled('div', {
   display: 'flex',
@@ -14,12 +14,12 @@ export const Container = styled('div', {
 
   '& img': {
     width: '16rem',
-    margin: '-3rem 0 0 0'
+    margin: '-3rem 0 0 0',
   },
 
   '& div': {
     display: 'flex',
-    gap: '1rem'
+    gap: '1rem',
   },
 })
 
@@ -34,11 +34,11 @@ export const SubTitle = styled('span', {
 
   variants: {
     hasContent: {
-      flex: { 
-        display: 'flex'
+      flex: {
+        display: 'flex',
       },
-      none: { 
-        display: 'none' 
+      none: {
+        display: 'none',
       },
     },
   },
@@ -47,14 +47,14 @@ export const SubTitle = styled('span', {
 export const CoffeeName = styled('h1', {
   fontSize: '2rem',
   color: '$baseSubTitle',
-  fontFamily: 'Baloo 2 , sans-serif'
+  fontFamily: 'Baloo 2 , sans-serif',
 })
 
 export const Paragraph = styled('p', {
   fontSize: '1.25rem',
   color: '$baseLabel',
   width: '20rem',
-  margin: '1rem auto 2rem'
+  margin: '1rem auto 2rem',
 })
 
 export const Purchase = styled('div', {
@@ -62,7 +62,7 @@ export const Purchase = styled('div', {
   justifyContent: 'space-evenly',
   alignItems: 'center',
   width: '24rem',
-  margin: 'auto'
+  margin: 'auto',
 })
 
 export const Price = styled('div', {
@@ -72,8 +72,8 @@ export const Price = styled('div', {
   '& span': {
     fontFamily: 'Baloo 2, sans-serif',
     fontSize: '2rem',
-    fontWeight: '800'
-  }
+    fontWeight: '800',
+  },
 })
 
 export const HowManyItems = styled('div', {
@@ -86,7 +86,7 @@ export const HowManyItems = styled('div', {
   backgroundColor: '$baseButton',
 
   '& div': {
-    fontSize: '1.25rem'  
+    fontSize: '1.25rem',
   },
 })
 
@@ -96,8 +96,8 @@ export const AddItems = styled('button', {
   padding: '.5rem .75rem',
   borderRadius: '5px',
   transition: '.2s',
-  
+
   '&:hover': {
     backgroundColor: '$purple',
-  }
+  },
 })

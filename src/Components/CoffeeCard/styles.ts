@@ -1,4 +1,4 @@
-import { styled } from "../../styles/stitches.config";
+import { styled } from '../../styles/stitches.config'
 
 export const Container = styled('div', {
   display: 'flex',
@@ -14,7 +14,7 @@ export const PriceContainer = styled('div', {
 
   '& div': {
     display: 'flex',
-    gap: '1rem'
+    gap: '1rem',
   },
 })
 
@@ -23,14 +23,14 @@ export const Header = styled('div', {
 
   '& h2': {
     fontSize: '1.75rem',
-    color: '$baseSubTitle'
+    color: '$baseSubTitle',
   },
-  
+
   '& p': {
     fontSize: '1.75rem',
     fontWeight: 'bold',
-    color: '$baseSubTitle'
-  }
+    color: '$baseSubTitle',
+  },
 })
 
 export const Button = styled('button', {
@@ -45,11 +45,11 @@ export const Button = styled('button', {
   textTransform: 'uppercase',
 
   '&:hover': {
-    backgroundColor: '$baseHover'
+    backgroundColor: '$baseHover',
   },
 
   '&:focus': {
     backgroundColor: '$purpleLight',
     outlineColor: '$purple',
-  }
+  },
 })

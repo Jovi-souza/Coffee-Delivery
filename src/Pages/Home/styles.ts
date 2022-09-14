@@ -1,9 +1,9 @@
-import { styled } from "../../styles/stitches.config";
+import { styled } from '../../styles/stitches.config'
 
 export const IntroContainer = styled('section', {
   display: 'flex',
   gap: '6rem',
-  mt: '6rem'
+  mt: '6rem',
 })
 
 export const Title = styled('h1', {
@@ -12,15 +12,15 @@ export const Title = styled('h1', {
   fontWeight: '700',
   width: '60rem',
   mb: '1rem',
-  
+
   variants: {
     style: {
       cardTitle: {
         fontSize: '3rem',
-        m: '12rem 0 8rem'
-      }
-    }
-  }
+        m: '12rem 0 8rem',
+      },
+    },
+  },
 })
 
 export const Paragraph = styled('p', {
@@ -29,7 +29,7 @@ export const Paragraph = styled('p', {
   color: '$baseSubTitle',
   alignItems: 'center',
   ml: '1rem',
-  
+
   variants: {
     style: {
       subTitle: {
@@ -52,7 +52,7 @@ export const About = styled('div', {
   '& div': {
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
 })
 
@@ -72,17 +72,16 @@ export const IconsContainer = styled('p', {
   variants: {
     style: {
       yellow: {
-        backgroundColor: '$yellow'
+        backgroundColor: '$yellow',
       },
       yellowDark: {
-        backgroundColor: '$yellowDark'
+        backgroundColor: '$yellowDark',
       },
       purple: {
-        backgroundColor: '$purple'
+        backgroundColor: '$purple',
       },
       gray: {
-        backgroundColor: '$baseText'
-        
+        backgroundColor: '$baseText',
       },
     },
   },

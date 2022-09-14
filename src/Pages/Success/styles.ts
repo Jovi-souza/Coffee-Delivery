@@ -1,4 +1,4 @@
-import { styled } from "../../styles/stitches.config";
+import { styled } from '../../styles/stitches.config'
 
 export const Container = styled('div', {
   display: 'flex',
@@ -6,8 +6,8 @@ export const Container = styled('div', {
 
   '& img': {
     width: '45rem',
-    mt: '15.4rem'
-  }
+    mt: '15.4rem',
+  },
 })
 
 export const TitleContainer = styled('div', {
@@ -15,13 +15,13 @@ export const TitleContainer = styled('div', {
 
   '& h1': {
     fontSize: '4rem',
-    color: '$yellowDark'
+    color: '$yellowDark',
   },
-  
+
   '& p': {
     fontSize: '2rem',
-    color: '$baseSubTitle'
-  }
+    color: '$baseSubTitle',
+  },
 })
 
 export const YourRequest = styled('div', {
@@ -35,7 +35,7 @@ export const YourRequest = styled('div', {
   width: '40rem',
   position: 'relative',
   linearGradient: '-45deg, $purple, $yellow',
-  
+
   '&::before': {
     content: '',
     position: 'absolute',
@@ -50,11 +50,11 @@ export const YourRequest = styled('div', {
     display: 'flex',
     alignItems: 'center',
     gap: '1rem',
-  }
+  },
 })
 
 export const Paragraph = styled('p', {
   fontSize: '1.5rem',
   color: '$baseText',
-  width: '35rem'
-})  
+  width: '35rem',
+})
