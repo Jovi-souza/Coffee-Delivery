@@ -4,10 +4,10 @@ import { CurrencyDollar, MapPin, Timer } from 'phosphor-react'
 import { Container, Paragraph, TitleContainer, YourRequest } from './styles'
 import { IconsContainer } from '../Home/styles'
 import { useContext } from 'react'
-import { CardContext } from '../../Contexts/CardsContext'
+import { FormContext } from '../../Contexts/FormContext/FormContext'
 
 export function Success() {
-  const { datas } = useContext(CardContext)
+  const { datas } = useContext(FormContext)
   return (
     <Container>
       <div>

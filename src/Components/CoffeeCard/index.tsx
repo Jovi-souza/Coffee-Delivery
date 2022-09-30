@@ -1,7 +1,7 @@
 import { Button, Container, PriceContainer, Header } from './styles'
 import { HowManyItems } from '../Cards/styles'
 import { Minus, Plus, Trash } from 'phosphor-react'
-import { useContext, useState } from 'react'
+import { useContext } from 'react'
 import { CardContext } from '../../Contexts/CardsContext'
 
 interface CoffeeCardProps {
@@ -12,7 +12,7 @@ interface CoffeeCardProps {
 }
 
 export function CoffeeCard({ CoffeeSrc, Title, id }: CoffeeCardProps) {
-  const { deleteRequest, items, MoreItems, LessItems } = useContext(CardContext)
+  const { deleteRequest } = useContext(CardContext)
 
   function handleDeleteRequest() {
     deleteRequest(id)
@@ -20,7 +20,7 @@ export function CoffeeCard({ CoffeeSrc, Title, id }: CoffeeCardProps) {
 
   return (
     <Container>
-      <img src={CoffeeSrc} />
+      <img src={CoffeeSrc} alt="" />
       <PriceContainer>
         <Header>
           <h2>{Title}</h2>

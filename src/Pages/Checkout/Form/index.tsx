@@ -2,7 +2,6 @@ import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as zod from 'zod'
 import { useContext } from 'react'
-import { CardContext } from '../../../Contexts/CardsContext'
 import {
   Button,
   FormContainer,
@@ -19,6 +18,7 @@ import {
   MapPinLine,
   Money,
 } from 'phosphor-react'
+import { FormContext } from '../../../Contexts/FormContext/FormContext'
 
 const FormDataValidantionSchema = zod.object({
   cep: zod
@@ -53,7 +53,7 @@ const FormDataValidantionSchema = zod.object({
 
 type FormDatas = zod.infer<typeof FormDataValidantionSchema>
 export function Form() {
-  const { submitClientDatas } = useContext(CardContext)
+  const { submitClientDatas } = useContext(FormContext)
 
   const { register, reset, handleSubmit } = useForm<FormDatas>({
     resolver: zodResolver(FormDataValidantionSchema),
