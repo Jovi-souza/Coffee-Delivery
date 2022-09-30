@@ -14,6 +14,7 @@ interface FormProps {
   bairro: string
   cidade?: string
   uf: string
+  payment: string
 }
 
 interface CardsContextType {
@@ -25,7 +26,6 @@ interface CardsContextType {
   LessItems: () => void
   createNewRequest: (data: Card) => void
   deleteRequest: (requestToDelete: string) => void
-  typeOfPayment: (event: Event) => void
   submitClientDatas: (data: FormProps) => void
 }
 
@@ -72,14 +72,6 @@ export function CardsContext({ children }: childrenProps) {
 
   function submitClientDatas(data: FormProps) {
     setDatas(data)
-    console.log(data)
-  }
-
-  function typeOfPayment(event: Event) {
-    event.preventDefault()
-
-    const target = event.target as HTMLButtonElement
-    console.log(target.value)
   }
 
   const itemsInCart = requests.length
@@ -94,7 +86,6 @@ export function CardsContext({ children }: childrenProps) {
         datas,
         MoreItems,
         LessItems,
-        typeOfPayment,
         submitClientDatas,
       }}
     >

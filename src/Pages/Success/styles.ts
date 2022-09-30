@@ -57,4 +57,8 @@ export const Paragraph = styled('p', {
   fontSize: '1.5rem',
   color: '$baseText',
   width: '35rem',
+  '& strong': {
+    display: 'inline-flex',
+    gap: '1rem',
+  },
 })

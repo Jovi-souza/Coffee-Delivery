@@ -7,9 +7,7 @@ import { useContext } from 'react'
 import { CardContext } from '../../Contexts/CardsContext'
 
 export function Success() {
-  const { datasInfos } = useContext(CardContext)
-
-  console.log(datasInfos)
+  const { datas } = useContext(CardContext)
   return (
     <Container>
       <div>
@@ -23,9 +21,9 @@ export function Success() {
               <MapPin size={16} color="white" weight="fill" />
             </IconsContainer>
             <Paragraph>
-              Entrega em <strong></strong>
-              <strong></strong>
-              <strong></strong>, <strong></strong>
+              Entrega em <strong>{datas.rua}</strong>,
+              <strong>{datas.numero}</strong> - <span>{datas.bairro}</span>,
+              <span>{datas.cidade}</span> <span>{datas.uf}</span>
             </Paragraph>
           </div>
 
@@ -33,7 +31,10 @@ export function Success() {
             <IconsContainer style={'yellow'}>
               <Timer size={16} color="white" weight="fill" />
             </IconsContainer>
-            <Paragraph>Previsão de entrega 20 min - 30 min</Paragraph>
+            <Paragraph>
+              Previsão de entrega <strong>20 min</strong> -
+              <strong>30 min</strong>
+            </Paragraph>
           </div>
 
           <div>
@@ -41,7 +42,7 @@ export function Success() {
               <CurrencyDollar size={16} color="white" />
             </IconsContainer>
             <Paragraph>
-              Pagamento na entrega <strong>Cartão de Crédito</strong>
+              Pagamento na entrega <strong>{datas.payment}</strong>
             </Paragraph>
           </div>
         </YourRequest>

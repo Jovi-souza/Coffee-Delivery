@@ -48,6 +48,7 @@ const FormDataValidantionSchema = zod.object({
     .string()
     .min(1, 'preencha o campo, é obrigatório')
     .max(20, 'o número de caracteres excedeu o limite máximo'),
+  payment: zod.string(),
 })
 
 type FormDatas = zod.infer<typeof FormDataValidantionSchema>
@@ -131,13 +132,23 @@ export function Form() {
           </p>
         </HeaderContainer>
         <SubmitContainer>
-          <Button value="Cartão de crédito" type="submit">
-            <CreditCard color="purple" size={16} /> Cartão de crédito
+          <Button
+            value="Cartão de crédito"
+            type="submit"
+            {...register('payment')}
+          >
+            <CreditCard color="purple" size={16} />
+            Cartão de crédito
           </Button>
-          <Button value="Cartão de débito" type="submit">
-            <Bank color="purple" size={16} /> Cartão de débito
+          <Button
+            value="Cartão de débito"
+            type="submit"
+            {...register('payment')}
+          >
+            <Bank color="purple" size={16} />
+            Cartão de débito
           </Button>
-          <Button value="Dinheiro" type="submit">
+          <Button value="Dinheiro" type="submit" {...register('payment')}>
             <Money color="purple" size={16} />
             Dinheiro
           </Button>
