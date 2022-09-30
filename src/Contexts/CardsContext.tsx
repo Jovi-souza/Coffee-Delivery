@@ -1,56 +1,32 @@
 import { createContext, ReactNode, useState } from 'react'
-import { useForm } from 'react-hook-form'
-import { zodResolver } from '@hookform/resolvers/zod'
-import * as zod from 'zod'
 
 interface Card {
   id: string
   CoffeeSrc: string
   Title: string
 }
-const FormDataValidantionSchema = zod.object({
-  cep: zod
-    .string()
-    .max(50, 'o número de caracteres excedeu o limite máximo')
-    .optional(),
-  rua: zod
-    .string()
-    .min(1, 'preencha o campo, é obrigatório')
-    .max(50, 'o número de caracteres excedeu o limite máximo'),
-  complemento: zod
-    .string()
-    .max(50, 'o número de caracteres excedeu o limite máximo')
-    .optional(),
-  numero: zod
-    .string()
-    .min(1, 'preencha o campo, é obrigatório')
-    .max(5, 'o número de caracteres excedeu o limite máximo'),
-  bairro: zod
-    .string()
-    .max(50, 'o número de caracteres excedeu o limite máximo'),
-  cidade: zod
-    .string()
-    .max(50, 'número de caracteres excedeu o limite máximo')
-    .optional(),
-  uf: zod
-    .string()
-    .min(1, 'preencha o campo, é obrigatório')
-    .max(20, 'o número de caracteres excedeu o limite máximo'),
-})
 
-type FormDatas = zod.infer<typeof FormDataValidantionSchema>
+interface FormProps {
+  cep?: string
+  rua: string
+  complemento?: string
+  numero: string
+  bairro: string
+  cidade?: string
+  uf: string
+}
 
 interface CardsContextType {
   requests: Card[]
   items: number
   itemsInCart: number
-  datasInfos: {}
+  datas: FormProps
   MoreItems: () => void
   LessItems: () => void
   createNewRequest: (data: Card) => void
   deleteRequest: (requestToDelete: string) => void
   typeOfPayment: (event: Event) => void
-  submitClientDatas: (data: FormDatas) => void
+  submitClientDatas: (data: FormProps) => void
 }
 
 interface childrenProps {
@@ -61,6 +37,7 @@ export const CardContext = createContext({} as CardsContextType)
 
 export function CardsContext({ children }: childrenProps) {
   const [requests, setRequests] = useState<Card[]>([])
+  const [datas, setDatas] = useState({} as FormProps)
   const [items, setItems] = useState(0)
 
   function createNewRequest(data: Card) {
@@ -93,25 +70,9 @@ export function CardsContext({ children }: childrenProps) {
     })
   }
 
-  const { reset } = useForm<FormDatas>({
-    resolver: zodResolver(FormDataValidantionSchema),
-  })
-
-  let datasInfos = {}
-
-  function submitClientDatas(data: FormDatas) {
-    const { bairro, numero, rua, uf } = data
-
-    const address = {
-      rua,
-      numero,
-      bairro,
-      uf,
-    }
-
-    datasInfos = address
-    console.log(datasInfos)
-    reset()
+  function submitClientDatas(data: FormProps) {
+    setDatas(data)
+    console.log(data)
   }
 
   function typeOfPayment(event: Event) {
@@ -129,8 +90,8 @@ export function CardsContext({ children }: childrenProps) {
         createNewRequest,
         deleteRequest,
         items,
-        datasInfos,
         itemsInCart,
+        datas,
         MoreItems,
         LessItems,
         typeOfPayment,

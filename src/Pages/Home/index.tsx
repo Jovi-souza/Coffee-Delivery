@@ -49,7 +49,7 @@ export function Home() {
             </div>
           </About>
         </div>
-        <img src={CoffeIntro} />
+        <img src={CoffeIntro} alt="" />
       </IntroContainer>
       <Title style={'cardTitle'}>Nossos Cafés</Title>
       <SectionItems>

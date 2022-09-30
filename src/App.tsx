@@ -7,11 +7,11 @@ import { GlobalCss } from './styles/GlobalStyles'
 export default function App() {
   return (
     <Container>
-      <CardsContext>
-        <BrowserRouter>
+      <BrowserRouter>
+        <CardsContext>
           <Router />
-        </BrowserRouter>
-      </CardsContext>
+        </CardsContext>
+      </BrowserRouter>
       {GlobalCss()}
     </Container>
   )
